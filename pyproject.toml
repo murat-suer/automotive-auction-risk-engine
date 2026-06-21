@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auto-risk"
+version = "1.0.0"
+description = "Automotive Auction Risk & Opportunity Engine — used-car lemon detection + opportunity mining"
+readme = "README.md"
+license = {text = "AGPL-3.0-or-later"}
+requires-python = ">=3.11"
+authors = [{name = "Murat SUER", email = "murat@muratsuer.eu"}]
+keywords = ["machine-learning", "classification", "imbalanced-data", "scikit-learn", "used-cars"]
+
+dependencies = [
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.4.0",
+    "scipy>=1.13.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4.0", "ruff>=0.6.0"]
+
+[project.urls]
+Homepage = "https://muratsuer.eu"
+Repository = "https://github.com/murat-suer/automotive-auction-risk-engine"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["auto_risk*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120

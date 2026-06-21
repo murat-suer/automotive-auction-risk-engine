@@ -1,0 +1,16 @@
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4"]
+ignore = [
+    "E501",
+    # Scientific / dataset naming: X_train, MMR column groups, F-stat etc. follow
+    # ML and source-dataset notation rather than PEP8 lowercase.
+    "N803",
+    "N806",
+]
+
+[lint.per-file-ignores]
+# Tests intentionally keep illustrative unused values and loose assertions.
+"tests/**" = ["F841", "B007", "E731"]

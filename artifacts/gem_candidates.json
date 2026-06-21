@@ -1,0 +1,37 @@
+{
+  "gem1": {
+    "n": 283,
+    "success_rate": 91.9,
+    "wilson_lo": 88.1,
+    "wilson_hi": 94.5,
+    "strategy": "Bargain Buy",
+    "description": "High-confidence clean vehicles priced in the lowest cost quartile (≤$4,100). Maximum inventory at minimum acquisition cost.",
+    "criteria": "Model confidence ≥ OOF threshold | Price ≤ $4,100 (25th pct) | Not risky cluster",
+    "target_buyer": "Volume Dealer"
+  },
+  "gem2": {
+    "n": 723,
+    "success_rate": 94.9,
+    "wilson_lo": 93.0,
+    "wilson_hi": 96.3,
+    "strategy": "Undervalued Find",
+    "description": "Clean vehicles priced 10%+ below current market average (CVR < 0.90). Strong resale margin for value-focused buyers.",
+    "criteria": "Model confidence ≥ 75% | CurrentValueRatio < 0.90 | Not risky cluster",
+    "target_buyer": "Value Investor"
+  },
+  "gem3": {
+    "n": 812,
+    "success_rate": 97.2,
+    "wilson_lo": 95.8,
+    "wilson_hi": 98.1,
+    "strategy": "Market Quality",
+    "description": "High-confidence clean vehicles fairly priced at market rate (CVR 0.90–1.10). Reliability and quality for reputation-driven dealers.",
+    "criteria": "Model confidence ≥ 85% | Value ratio ∈ [0.90, 1.10] | Not risky cluster",
+    "target_buyer": "Quality Dealer"
+  },
+  "baseline_success_rate": 91.6,
+  "oof_threshold": 0.78,
+  "oof_precision": 0.9512,
+  "methodology": "Out-of-Fold precision calibration (5-Fold CV, zero leakage)",
+  "generated_at": "2026-05-05 15:27:43"
+}

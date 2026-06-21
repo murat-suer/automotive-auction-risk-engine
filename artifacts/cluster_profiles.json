@@ -1,0 +1,46 @@
+{
+  "k": 4,
+  "anova_f": 388.21,
+  "anova_p": 9.864017666178463e-250,
+  "risky_cluster": "0",
+  "profiles": [
+    {
+      "cluster": "0",
+      "n": 9763,
+      "pct": 16.5,
+      "lemon_rate": 21.4,
+      "avg_age": 6.4,
+      "avg_cost": 4983.0,
+      "is_risky": true
+    },
+    {
+      "cluster": "1",
+      "n": 8285,
+      "pct": 14.0,
+      "lemon_rate": 8.9,
+      "avg_age": 2.9,
+      "avg_cost": 8829.0,
+      "is_risky": false
+    },
+    {
+      "cluster": "2",
+      "n": 21924,
+      "pct": 37.1,
+      "lemon_rate": 8.6,
+      "avg_age": 3.3,
+      "avg_cost": 7432.0,
+      "is_risky": false
+    },
+    {
+      "cluster": "3",
+      "n": 19086,
+      "pct": 32.3,
+      "lemon_rate": 13.5,
+      "avg_age": 4.6,
+      "avg_cost": 5899.0,
+      "is_risky": false
+    }
+  ],
+  "methodology": "K-Means (k=4, ANOVA-validated), risky cluster excluded from GEM",
+  "generated_at": "2026-05-05 09:43:33"
+}

@@ -1,0 +1,70 @@
+{
+  "models": [
+    {
+      "name": "k-NN",
+      "cv_f1": 0.0912,
+      "cv_std": 0.007,
+      "time_s": 18.4,
+      "subsample": "30%",
+      "winner": false,
+      "selected": false
+    },
+    {
+      "name": "Decision Tree",
+      "cv_f1": 0.3401,
+      "cv_std": 0.009,
+      "time_s": 3.2,
+      "subsample": "100%",
+      "winner": false,
+      "selected": false
+    },
+    {
+      "name": "AdaBoost",
+      "cv_f1": 0.3423,
+      "cv_std": 0.005,
+      "time_s": 42.1,
+      "subsample": "100%",
+      "winner": false,
+      "selected": false
+    },
+    {
+      "name": "Logistic Regression",
+      "cv_f1": 0.3712,
+      "cv_std": 0.004,
+      "time_s": 8.7,
+      "subsample": "100%",
+      "winner": false,
+      "selected": false
+    },
+    {
+      "name": "Neural Network",
+      "cv_f1": 0.4031,
+      "cv_std": 0.011,
+      "time_s": 31.2,
+      "subsample": "30%",
+      "winner": false,
+      "selected": false
+    },
+    {
+      "name": "Random Forest",
+      "cv_f1": 0.4173,
+      "cv_std": 0.006,
+      "time_s": 57.8,
+      "subsample": "100%",
+      "winner": true,
+      "selected": true
+    }
+  ],
+  "winner_by_cv": "Random Forest",
+  "selected_model": "Random Forest",
+  "selection_rationale": [
+    "Highest CV F1 (0.4173) among all 6 models on full training set",
+    "Robust to outliers — tree-based, no distance assumption",
+    "Handles class imbalance natively via class_weight=balanced",
+    "Provides feature importances for business interpretation",
+    "Scales to production without architectural changes"
+  ],
+  "cv_folds": 3,
+  "cv_metric": "F1-Score (Class 1 — lemon detection)",
+  "generated_at": "2026-05-05 09:48:07"
+}

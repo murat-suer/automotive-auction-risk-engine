@@ -1,0 +1,9 @@
+# Large datasets tracked with Git LFS
+data/*.csv filter=lfs diff=lfs merge=lfs -text
+
+# Normalise line endings for text sources
+*.py   text eol=lf
+*.md   text eol=lf
+*.toml text eol=lf
+*.txt  text eol=lf
+*.yml  text eol=lf

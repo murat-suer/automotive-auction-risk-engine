@@ -1,0 +1,47 @@
+{
+  "stages": [
+    {
+      "step": "DataCleaner",
+      "type": "custom_transformer",
+      "detail": "Median imputation (9 cols), Unknown fill for categoricals; fit on train only — no leakage"
+    },
+    {
+      "step": "sampling_data()",
+      "type": "outlier_filter",
+      "detail": "Remove VehBCost=0 and VehicleAge<0; applied to training set only"
+    },
+    {
+      "step": "engineer_features()",
+      "type": "feature_engineering",
+      "detail": "7 new features added (PurchMonth, PurchWeekday, PriceDeviation, OdoPerYear, RetailPotential, CurrentValueRatio, WarrantyToCostRatio); 6 high-cardinality cols dropped; warranty median from train only"
+    },
+    {
+      "step": "K-Means (k=4)",
+      "type": "unsupervised_layer",
+      "detail": "Vehicle Profile Clustering: ANOVA F=388, p<0.001; risky cluster excluded from GEM; predict() applied to test set (no re-fit)"
+    },
+    {
+      "step": "ColumnTransformer",
+      "type": "preprocessor",
+      "detail": "StandardScaler (numerical) + OneHotEncoder (categorical, handle_unknown=ignore) + StandardScaler→PCA(2) (8 MMR price cols → 95.77% variance)"
+    },
+    {
+      "step": "RandomForestClassifier",
+      "type": "classifier",
+      "detail": "GridSearchCV (3-fold, 48 combos × 3 = 144 fits); class_weight=balanced; best: n_estimators=400, max_depth=20"
+    },
+    {
+      "step": "GEM Opportunity Engine",
+      "type": "opportunity_layer",
+      "detail": "OOF threshold calibration via cross_val_predict (5-fold, zero leakage); 3-tier strategy applied to predict_proba output; Wilson 95% CI validation"
+    }
+  ],
+  "anti_leakage": [
+    "DataCleaner.fit() only on training set; .transform() applied to test",
+    "engineer_features() uses training warranty_to_cost median for test transformation",
+    "K-Means fitted on training features, predict() applied to test",
+    "OOF threshold calibrated via cross_val_predict — test set never used in calibration",
+    "GridSearchCV scoring operates only on training folds"
+  ],
+  "generated_at": "2026-05-05 09:48:07"
+}

@@ -1,0 +1,82 @@
+{
+  "method": "Permutation Importance (n_repeats=10, F1 scoring, test set)",
+  "insight": "WheelType dominates: missing wheel data signals incomplete vehicle history — a strong lemon indicator",
+  "features": [
+    {
+      "name": "WheelType",
+      "importance": 0.213,
+      "std": 0.0081
+    },
+    {
+      "name": "VehicleAge",
+      "importance": 0.017,
+      "std": 0.0019
+    },
+    {
+      "name": "VehBCost",
+      "importance": 0.014,
+      "std": 0.0015
+    },
+    {
+      "name": "WarrantyToCostRatio",
+      "importance": 0.014,
+      "std": 0.0017
+    },
+    {
+      "name": "OdoPerYear",
+      "importance": 0.0112,
+      "std": 0.0013
+    },
+    {
+      "name": "CurrentValueRatio",
+      "importance": 0.0098,
+      "std": 0.0011
+    },
+    {
+      "name": "PriceDeviation",
+      "importance": 0.0087,
+      "std": 0.001
+    },
+    {
+      "name": "Transmission",
+      "importance": 0.0071,
+      "std": 0.0009
+    },
+    {
+      "name": "Nationality",
+      "importance": 0.0058,
+      "std": 0.0008
+    },
+    {
+      "name": "Size",
+      "importance": 0.0041,
+      "std": 0.0007
+    },
+    {
+      "name": "PurchMonth",
+      "importance": 0.0035,
+      "std": 0.0006
+    },
+    {
+      "name": "Auction",
+      "importance": 0.0029,
+      "std": 0.0005
+    },
+    {
+      "name": "Vehicle_Profile_Cluster",
+      "importance": 0.0021,
+      "std": 0.0004
+    },
+    {
+      "name": "RetailPotential",
+      "importance": 0.0018,
+      "std": 0.0004
+    },
+    {
+      "name": "PurchWeekday",
+      "importance": 0.0009,
+      "std": 0.0003
+    }
+  ],
+  "generated_at": "2026-05-05 09:48:07"
+}
